@@ -15,5 +15,10 @@ module TestService
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # Add files that are not Rails files for development/test
+    config.autoload_paths += %W[#{config.root}/lib/ #{config.root}/lib]
+    # Add files that are not Rails files for production
+    config.eager_load_paths += %W[#{config.root}/lib]
   end
 end

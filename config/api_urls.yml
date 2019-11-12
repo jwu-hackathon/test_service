@@ -1,0 +1,19 @@
+# Configuration for external API calls
+aliases: &default
+  retries_default: '2'
+  retry_on_default: ['408', '502', '503', '504']
+  open_timeout_default: '6'
+  read_timeout_default: '6'
+
+development:
+  << : *default
+  github_api_url: <%= ENV['GITHUB_API_URL'] || 'https://api.github.com' %>
+
+test:
+  << : *default
+  github_api_url: 'http://test/'
+
+# Rails production
+production:
+  << : *default
+  github_api_url: <%= ENV['GITHUB_API_URL'] || 'https://api.github.com' %>

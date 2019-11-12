@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   # Another route for custom_single_endpoint without a custom url path
   # /custom_single_endpoint
   get :custom_single_endpoint, to: 'single_endpoint#custom_single_endpoint'
+
+  # GitHub Repo Endpoint
+  # /get-github-repo
+  get 'get-github-repo', to: 'github_repo#index'
 end
